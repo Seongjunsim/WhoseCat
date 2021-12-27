@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:orientation="horizontal"
+    android:padding="10dp">
+
+    <RelativeLayout
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginRight="20dp"
+        >
+        <az.plainpie.PieView
+            android:id="@+id/pv_data"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_center"
+            android:textSize="15dp"
+            android:text="hihihihi"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:visibility="invisible"
+            android:layout_gravity="center"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_standart"
+            android:layout_alignLeft="@id/tv_center"
+            android:layout_below="@id/tv_center"
+            android:textColor="@android:color/tab_indicator_text"
+            android:textSize="10dp"
+            android:text="/ 1300lux"/>
+
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <TextView
+            android:textColor="@color/colorHomeMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_data_name"
+            android:text="hihi"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="20dp"/>
+        <TextView
+            android:textColor="@color/colorHomeMain"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/tv_data_exp"
+            android:text="Today's dayliight expouser leveffesafeasfesafefefeffefel"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

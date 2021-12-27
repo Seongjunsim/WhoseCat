@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.jmsmart.whosecat">
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:required="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher_whosecat"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".view.com.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".view.com.WeightScaleActivity" />
+        <activity android:name=".view.com.DailyActivity" />
+        <activity android:name=".view.com.PetDeviceManagementActivity" />
+        <activity android:name=".view.com.ScanDeviceActivity" />
+        <activity android:name=".view.com.WaterActivity" />
+        <activity android:name=".view.com.PetSettingActivity" />
+        <activity android:name=".view.com.PetRegisterActivty" />
+        <activity android:name=".view.com.MyPageEditActivity" />
+        <activity android:name=".view.com.SignUpActivity" />
+        <activity android:name=".view.com.LoginActivity">
+
+        </activity>
+        <activity android:name=".view.com.MainActivity" />
+
+        <service
+            android:name=".service.CommandService"
+            android:exported="false" />
+        <service
+            android:name=".service.ExecuteService"
+            android:enabled="true"
+            android:exported="true" />
+    </application>
+
+</manifest>

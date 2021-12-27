@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="signUpModel"
+            type="com.jmsmart.whosecat.view.com.viewModel.SignUpViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:background="#eeeeee">
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title="@string/sign_up"
+            app:titleTextColor="@android:color/white"
+            android:background="@color/colorPrimary"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cardBackgroundColor="#ffffff"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="50dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:padding="36dp"
+                    android:layout_marginBottom="48dp"
+                    android:visibility="@{signUpModel.idVisible}"
+                    android:background="#ffffff"
+                    android:id="@+id/layout_Id_Password">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/edit_ID"
+                        android:text="@={signUpModel.userIdTxt}"
+                        android:inputType="textEmailAddress"
+                        android:hint="@string/email_hint"
+                        app:backgroundTint="@color/colorPrimary" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/edit_Password"
+                        android:text="@={signUpModel.userPassTxt}"
+                        android:hint="@string/password"
+                        android:inputType="textPassword"
+                        app:backgroundTint="@color/colorPrimary" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/password_check"
+                        android:text="@={signUpModel.userPassCheckTxt}"
+                        android:id="@+id/edit_Password_check"
+                        android:inputType="textPassword"
+                        app:backgroundTint="@color/colorPrimary" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <ToggleButton
+                            android:id="@+id/password_toggle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textOn="@string/show_password"
+                            android:textOff="@string/no_show_password"
+                            android:onClick="@{signUpModel.clickToggle}"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginLeft="20dp"
+                            android:textSize="10dp"
+                            android:text="@string/password_rule"
+                            android:textColor="@color/colorPasswordRule"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="@{signUpModel.detailVisible}"
+                    android:background="#ffffff"
+                    android:layout_gravity="center"
+                    android:padding="36dp"
+                    android:layout_marginBottom="48dp"
+                    android:id="@+id/layout_detail_info">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/name"
+                        android:layout_marginTop="10dp"
+                        android:textSize="16dp"/>
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/edit_name"
+                        android:hint="@string/name"
+                        android:text="@={signUpModel.userNameTxt}"
+                        android:inputType="textPersonName"
+                        app:backgroundTint="@color/colorPrimary"
+                        android:textSize="16dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/phone_number"
+                        android:textSize="16dp"
+                        android:layout_marginTop="10dp"/>
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/Edit_phone_number"
+                        android:hint="@string/phone_number_hint"
+                        android:text="@={signUpModel.userPhoneTxt}"
+                        android:inputType="number"
+                        app:backgroundTint="@color/colorPrimary"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sex"
+                        android:layout_marginTop="10dp"
+                        android:textSize="16dp"/>
+
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:id="@+id/radio_user">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/radio_male"
+                            android:checked="true"
+                            android:text="@string/male"
+                            android:textSize="16dp"/>
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/radio_female"
+                            android:text="@string/female"
+                            android:textSize="16dp"
+                            />
+                    </RadioGroup>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/birthday"
+                        android:layout_marginTop="10dp"
+                        android:textSize="16dp"/>
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/birthday_hint"
+                        android:text="@={signUpModel.userBirthdayTxt}"
+                        android:id="@+id/edit_birthday"
+                        android:inputType="date"
+                        app:backgroundTint="@color/colorPrimary"
+                        android:textSize="16dp" />
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:orientation="horizontal"
+                    android:layout_gravity="bottom"
+                    android:background="#ffffff">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="9.3sp" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="16dp"
+                        android:enabled="@{signUpModel.beforeBtnEnabled}"
+                        android:id="@+id/btn_before"
+                        android:onClick="@{()->signUpModel.onBeforeClick()}"
+                        android:textColor="#5a000000"
+                        android:lineSpacingExtra="0sp"
+                        android:text="@string/previous"
+                        android:background="#00000000" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="16dp"
+                        android:enabled="@{signUpModel.nextBtnEnabled}"
+                        android:id="@+id/btn_next"
+                        android:onClick="@{() -> signUpModel.onNextClick()}"
+                        android:textColor="@color/colorPrimary"
+                        android:lineSpacingExtra="0sp"
+                        android:text="@string/next"
+                        android:background="#00000000" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</layout>

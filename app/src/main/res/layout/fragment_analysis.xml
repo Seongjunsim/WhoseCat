@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.com.MainActivity"
+    >
+    <data>
+        <variable
+            name="FragmentAnalysis"
+            type="com.jmsmart.whosecat.view.com.viewModel.FragmentAnalysisViewModel" />
+    </data>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone"
+            android:id="@+id/ll_caution">
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@drawable/caution"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="@string/caution"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_analysis"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="50dp"
+                    android:layout_height="0dp"
+                    android:id="@+id/arrow_left"
+                    android:background="@drawable/arrow"
+                    android:layout_marginLeft="10dp"
+
+                    app:layout_constraintBottom_toBottomOf="@+id/data_spinner"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/data_spinner"/>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/data_spinner"
+                    android:layout_gravity="center"
+                    android:clipToPadding="false"
+                    android:paddingLeft="183dp"
+                    android:paddingRight="183dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toStartOf="@+id/arrow_left"
+                    app:layout_constraintStart_toEndOf="@+id/arrow_right"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="50dp"
+                    android:layout_height="0dp"
+                    android:id="@+id/arrow_right"
+                    android:background="@drawable/arrow"
+                    android:rotation="180"
+                    android:layout_marginRight="10dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/data_spinner"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/data_spinner"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <info.hoang8f.android.segmented.SegmentedGroup
+                android:id="@+id/sg_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                app:sc_border_width="2dp"
+                app:sc_corner_radius="10dp"
+                app:sc_tint_color="@color/colorPrimary">
+                <RadioButton
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/day"
+                    android:checked="true"
+                    android:textSize="16dp"
+                    android:text="@string/day"
+                    style="@style/RadioButton"/>
+                <RadioButton
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/month"
+                    android:text="@string/month"
+                    android:textSize="16dp"
+                    style="@style/RadioButton"/>
+                <RadioButton
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/year"
+                    android:textSize="16dp"
+                    android:id="@+id/year"
+                    style="@style/RadioButton"/>
+
+            </info.hoang8f.android.segmented.SegmentedGroup>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/home_view_left_margin"
+                android:layout_marginRight="@dimen/home_view_left_margin">
+                <ImageView
+                    android:id="@+id/img_calendar"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/calendar"/>
+                <TextView
+                    android:layout_marginLeft="@dimen/home_view_left_margin"
+                    android:layout_width="match_parent"
+                    android:id="@+id/tv_calendar"
+                    android:layout_height="40dp"
+                    android:gravity="center_vertical"
+                    android:layout_toRightOf="@id/img_calendar"
+                    android:textSize="15dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/img_calendar"
+                    android:textSize="30dp"
+                    android:textColor="@color/black"
+                    android:id="@+id/tv_value"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/tv_value"
+                    android:layout_alignBottom="@id/tv_value"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="3dp"
+                    android:id="@+id/tv_unit"/>
+
+            </RelativeLayout>
+
+            <FrameLayout
+                android:layout_height="0dp"
+                android:layout_width="match_parent"
+                android:layout_weight="4"
+                android:id="@id/fragment_parent">
+            </FrameLayout>
+
+        </LinearLayout>
+    </FrameLayout>
+
+</layout>

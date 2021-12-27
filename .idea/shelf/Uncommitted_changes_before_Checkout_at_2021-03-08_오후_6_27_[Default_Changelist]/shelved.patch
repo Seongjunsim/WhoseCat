@@ -1,0 +1,22 @@
+Index: app/src/main/java/com/jmsmart/kittydoc/view/fragment/FragmentAnalysisDay.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.jmsmart.kittydoc.view.fragment;\r\n\r\nimport androidx.databinding.DataBindingUtil;\r\nimport androidx.fragment.app.Fragment;\r\nimport androidx.lifecycle.ViewModelProvider;\r\n\r\n\r\nimport android.os.Bundle;\r\n\r\nimport androidx.annotation.NonNull;\r\nimport androidx.annotation.Nullable;\r\n\r\n\r\nimport android.util.Log;\r\nimport android.view.LayoutInflater;\r\nimport android.view.View;\r\nimport android.view.ViewGroup;\r\n\r\nimport com.jmsmart.kittydoc.R;\r\nimport com.jmsmart.kittydoc.databinding.FragmentAnalysisDayBinding;\r\nimport com.jmsmart.kittydoc.view.com.viewModel.FragmentAnalysisDayViewModel;\r\n\r\n\r\npublic class FragmentAnalysisDay extends Fragment {\r\n\r\n    private FragmentAnalysisDayViewModel model;\r\n    private FragmentAnalysisDayBinding binding;\r\n\r\n\r\n\r\n    @Override\r\n    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,\r\n                             @Nullable Bundle savedInstanceState) {\r\n        if(binding==null){\r\n            binding = DataBindingUtil.inflate(inflater,R.layout.fragment_analysis_day, container, false);\r\n            Log.i(\"Binding\",\"makeNew\");\r\n        }\r\n\r\n        View root = binding.getRoot();\r\n\r\n        if(model==null)\r\n            model = new FragmentAnalysisDayViewModel(container.getContext(), binding);\r\n        return model.onCreateView(root);\r\n    }\r\n\r\n    public void getPetDayData(){\r\n        model.getPetDayData();\r\n    }\r\n\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/jmsmart/kittydoc/view/fragment/FragmentAnalysisDay.java	(revision cc36b547ceac4e59a6dfa8a08c897b318bedb3a5)
++++ app/src/main/java/com/jmsmart/kittydoc/view/fragment/FragmentAnalysisDay.java	(date 1615184168604)
+@@ -43,6 +43,12 @@
+         return model.onCreateView(root);
+     }
+ 
++    @Override
++    public void onDestroyView() {
++        model.onDestroyView();
++        super.onDestroyView();
++    }
++
+     public void getPetDayData(){
+         model.getPetDayData();
+     }

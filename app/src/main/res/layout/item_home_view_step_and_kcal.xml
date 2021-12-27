@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorHomeViewBackground"
+    android:padding="5dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+            <TextView
+                android:id="@+id/home_view_item_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/step"
+                android:textSize="16dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/home_view_item_step_value"
+                android:text="0"
+                android:layout_below="@id/home_view_item_title"
+                android:textSize="@dimen/home_view_txt_value_size"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginLeft="@dimen/home_view_left_margin"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/home_view_item_step_goal"
+                android:text="/0 step"
+                android:textSize="16dp"
+                android:layout_alignBaseline="@id/home_view_item_step_value"
+                android:layout_toRightOf="@id/home_view_item_step_value"/>
+            <TextView
+                android:id="@+id/home_view_item_txt_kcal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/home_view_item_title"
+                android:layout_alignParentRight="true"
+                android:textSize="16dp"
+                android:layout_alignBaseline="@id/home_view_item_step_value"
+                android:text="0 Kcal"/>
+            <com.github.mikephil.charting.charts.HorizontalBarChart
+                android:id="@+id/home_view_horizon_bar_chart"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_below="@id/home_view_item_step_value"
+                android:layout_marginLeft="@dimen/home_view_left_margin"
+                android:layout_marginRight="@dimen/home_view_left_margin"/>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

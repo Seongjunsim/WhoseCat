@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data class="CalendarListBinding">
+        <import type="android.view.View" />
+
+        <variable
+            name="model"
+            type="com.jmsmart.whosecat.view.com.viewModel.CalendarListViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <!--헤더-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:background="@color/colorPrimary"
+            android:orientation="horizontal"
+            android:onClick="@{() -> model.dateFindClick()}">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="16dp"
+                android:textColor="@color/textPrimary"
+                android:text="@{model.mTitle}"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/baseline_search_black_18dp"
+                android:layout_marginHorizontal="10dp">
+            </ImageView>
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/lineColor" />
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/scrollView">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:id="@+id/radio_group"
+                    android:checkedButton="@id/all">
+                    <RadioButton
+                        android:id="@+id/all"
+                        android:text="@string/calendar_category_all"
+                        android:background="@drawable/radio_category_bg_selector"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/calendar_category_padding_horizontal"
+                        android:paddingVertical="@dimen/calendar_category_padding_vertical"
+                        android:textSize="@dimen/calendar_category_txt_size"
+                        android:textColor="@color/radio_category_txt_selector"
+                        android:textAlignment="center"
+                        android:button="@null"
+                        android:layout_margin="5dp"
+                        android:singleLine="true"/>
+                    <RadioButton
+                        android:id="@+id/hospital"
+                        android:text="@string/calendar_category_hospital"
+                        android:background="@drawable/radio_category_bg_selector"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/calendar_category_padding_horizontal"
+                        android:paddingVertical="@dimen/calendar_category_padding_vertical"
+                        android:textSize="@dimen/calendar_category_txt_size"
+                        android:textColor="@color/radio_category_txt_selector"
+                        android:textAlignment="center"
+                        android:button="@null"
+                        android:layout_margin="5dp"
+                        android:singleLine="true"/>
+                    <RadioButton
+                        android:id="@+id/purchase"
+                        android:text="@string/calendar_category_purchase_feed"
+                        android:background="@drawable/radio_category_bg_selector"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/calendar_category_padding_horizontal"
+                        android:paddingVertical="@dimen/calendar_category_padding_vertical"
+                        android:textSize="@dimen/calendar_category_txt_size"
+                        android:textColor="@color/radio_category_txt_selector"
+                        android:textAlignment="center"
+                        android:button="@null"
+                        android:layout_margin="5dp"
+                        android:singleLine="true"/>
+                    <RadioButton
+                        android:id="@+id/beauty"
+                        android:text="@string/calendar_category_vaccination"
+                        android:background="@drawable/radio_category_bg_selector"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/calendar_category_padding_horizontal"
+                        android:paddingVertical="@dimen/calendar_category_padding_vertical"
+                        android:textSize="@dimen/calendar_category_txt_size"
+                        android:textColor="@color/radio_category_txt_selector"
+                        android:textAlignment="center"
+                        android:button="@null"
+                        android:layout_margin="5dp"
+                        android:singleLine="true"/>
+                    <RadioButton
+                        android:id="@+id/bath"
+                        android:text="@string/calendar_category_bath"
+                        android:background="@drawable/radio_category_bg_selector"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/calendar_category_padding_horizontal"
+                        android:paddingVertical="@dimen/calendar_category_padding_vertical"
+                        android:textSize="@dimen/calendar_category_txt_size"
+                        android:textColor="@color/radio_category_txt_selector"
+                        android:textAlignment="center"
+                        android:button="@null"
+                        android:layout_margin="5dp"
+                        android:singleLine="true"/>
+                    <RadioButton
+                        android:id="@+id/etc"
+                        android:text="@string/calendar_category_ect"
+                        android:background="@drawable/radio_category_bg_selector"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/calendar_category_padding_horizontal"
+                        android:paddingVertical="@dimen/calendar_category_padding_vertical"
+                        android:textSize="@dimen/calendar_category_txt_size"
+                        android:textColor="@color/radio_category_txt_selector"
+                        android:textAlignment="center"
+                        android:button="@null"
+                        android:layout_margin="5dp"
+                        android:singleLine="true"/>
+                </RadioGroup>
+            </LinearLayout>
+        </HorizontalScrollView>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/lineColor"/>
+        <!--요일-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:background="#eaeae9"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="일"
+                android:textSize="9dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="월"
+                android:textColor="@color/black"
+                android:textSize="9dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="화"
+                android:textColor="@color/black"
+                android:textSize="9dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="수"
+                android:textColor="@color/black"
+                android:textSize="9dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="목"
+                android:textColor="@color/black"
+                android:textSize="9dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="금"
+                android:textColor="@color/black"
+                android:textSize="9dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="토"
+                android:textSize="9dp" />
+        </LinearLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/list_calendar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </FrameLayout>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <item
+            android:id="@+id/weight_check"
+            android:icon="@drawable/weight"
+
+            android:title="@string/weight_check"/>
+        <item
+            android:id="@+id/water_check"
+            android:icon="@drawable/water"
+            android:title="@string/water_check"/>
+        <item
+            android:id="@+id/food_check"
+            android:icon="@drawable/food"
+            android:title="@string/food_check"/>
+
+
+</menu>

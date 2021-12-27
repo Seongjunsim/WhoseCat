@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="PetSettingViewModle"
+            type="com.jmsmart.whosecat.view.com.viewModel.PetSettingViewModel" />
+    </data>
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorHomeViewBackground">
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tb"
+            android:background="@color/colorPrimary"
+            app:title="@string/pet_setting"
+            app:titleTextColor="@android:color/white"/>
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/tb"
+            android:id="@+id/list_pet_info"
+            android:padding="5dp"
+            android:divider="@color/colorHomeViewBackground"/>
+
+        <ImageButton
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:background="@drawable/add"
+            android:adjustViewBounds="true"
+            android:onClick="@{PetSettingViewModle.click}"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="30dp"
+            android:layout_alignParentRight="true"/>
+
+    </RelativeLayout>
+</layout>
+

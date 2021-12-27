@@ -1,0 +1,27 @@
+Index: app/src/main/res/values/colors.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<resources>\r\n    <color name=\"colorPrimary\">#6200EE</color>\r\n    <color name=\"colorPrimaryDark\">#3700B3</color>\r\n    <color name=\"colorAccent\">#03DAC5</color>\r\n    <color name=\"black\">#000000</color>\r\n    <color name=\"colorPrimary\">#297AA3</color>\r\n    <color name=\"colorPrimaryDark\">#216282</color>\r\n    <color name=\"colorAccent\">#D81B60</color>\r\n\r\n    <color name=\"textPrimary\">#F3F0D0</color>\r\n\r\n    <color name=\"warningRed\">#9C3D3B</color>\r\n    <color name=\"transparentWarningRed\">#609C3D3B</color>\r\n    <color name=\"transparentPrimary\">#80297AA3</color>\r\n\r\n    <color name=\"black\">#0C0C0F</color>\r\n    <color name=\"transparent\">#00000000</color>\r\n    <color name=\"lineColor\">#f2f1f1</color>\r\n\r\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/values/colors.xml	(revision 792d7865f15e980d88e106c8f76e362a1176b7f0)
++++ app/src/main/res/values/colors.xml	(date 1614068477422)
+@@ -1,9 +1,13 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <resources>
+-    <color name="colorPrimary">#6200EE</color>
+-    <color name="colorPrimaryDark">#3700B3</color>
+-    <color name="colorAccent">#03DAC5</color>
+-    <color name="black">#000000</color>
++
++
++    <color name="colorHomeBackgroundFirst">#e7fcff</color>
++    <color name="colorHomeMain">#319df8</color>
++    <color name="colorHomePieBackFirst">#add1f1</color>
++
++    <color name="colorHomePieSecond">#4a727e</color>
++    <color name="colorHomePieBackSecond">#adc8d1</color>
+     <color name="colorPrimary">#297AA3</color>
+     <color name="colorPrimaryDark">#216282</color>
+     <color name="colorAccent">#D81B60</color>

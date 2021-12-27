@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data class="DayItemBinding">
+
+        <import type="android.view.View" />
+
+        <variable
+            name="model"
+            type="com.jmsmart.whosecat.view.com.viewModel.CalendarDayViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/day_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintDimensionRatio="2:3"
+            android:hapticFeedbackEnabled="true"
+            tools:ignore="MissingConstraints,UnusedAttribute"
+            android:foreground="@drawable/foreground_selector_day"
+            android:onClick="@{() -> model.click()}">
+
+            <TextView
+                setDayText="@{model.mCalendar}"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:textSize="12sp"
+                tools:text="1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/img_calendar_circle1"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_margin="2dp"
+                    android:visibility="invisible"
+                    android:src="@drawable/calendar_data_not_focus_18dp"></ImageView>
+
+                <ImageView
+                    android:id="@+id/img_calendar_circle2"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_margin="2dp"
+                    android:visibility="invisible"
+                    android:src="@drawable/calendar_data_not_focus_18dp"></ImageView>
+
+                <ImageView
+                    android:id="@+id/img_calendar_circle3"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_margin="2dp"
+                    android:visibility="invisible"
+                    android:src="@drawable/calendar_data_not_focus_18dp"></ImageView>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txt_count"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#FDB62A</color>
+    <color name="colorPrimaryDark">#BA9011</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="textPrimary">#F3F0D0</color>
+
+    <color name="warningRed">#9C3D3B</color>
+    <color name="transparentWarningRed">#609C3D3B</color>
+    <color name="transparentPrimary">#80297AA3</color>
+
+    <color name="black">#0C0C0F</color>
+    <color name="transparent">#00000000</color>
+    <color name="lineColor">#f2f1f1</color>
+    <color name="colorHomeBackgroundFirst">#e7fcff</color>
+    <color name="colorHomeMain">#319df8</color>
+    <color name="colorHomePieBackFirst">#add1f1</color>
+
+    <color name="colorHomePieSecond">#126e82</color>
+    <color name="colorHomePieBackSecond">#adc8d1</color>
+    <color name="colorPasswordRule">#969696</color>
+    <color name="colorHomeBackground">#DEF4FF</color>
+    <color name="colorHomeBackgroundBarCart">#54C4F8</color>
+    <color name="colorWalk">#DFAB25</color>
+    <color name="colorExercise">#F7C530</color>
+    <color name="colorRest">#BA9011</color>
+    <color name="colorTextInDark">#CECECE</color>
+    <color name="colorBackground">#d8e3e7</color>
+    <color name="colorSliverText">#E2E2E2</color>
+    <color name="colorLowPrimary">#56E4F7</color>
+    <color name="battery">#B2FFB3</color>
+    <color name="colorHomeViewBackground">#EFEFEF</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="light_blue_900">#FF01579B</color>
+    <color name="light_blue_A200">#FF40C4FF</color>
+    <color name="light_blue_A400">#FF00B0FF</color>
+    <color name="black_overlay">#66000000</color>
+</resources>

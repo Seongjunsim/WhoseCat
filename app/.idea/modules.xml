@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/My Application-app.iml" filepath="$PROJECT_DIR$/.idea/modules/My Application-app.iml" group="My Application/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1498756086/My_Application.iml" filepath="$PROJECT_DIR$/.idea/modules/1498756086/My_Application.iml" group="My_Application" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app.iml" group="My Application/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1434779337/comJMSmartKittyDoc-My_Application.iml" filepath="$PROJECT_DIR$/.idea/modules/1434779337/comJMSmartKittyDoc-My_Application.iml" group="My_Application" />
+    </modules>
+  </component>
+</project>

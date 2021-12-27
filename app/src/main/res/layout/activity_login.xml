@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="loginModel"
+            type="com.jmsmart.whosecat.view.com.viewModel.LoginViewModel"/>
+    </data>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity = "center"
+        android:background="#eeeeee"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:src="@mipmap/ic_launcher_whosecat"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="40dp"/>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="5dp"
+                app:cardBackgroundColor="#ffffff">
+                <TextView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:text="ID"
+                    android:padding="5dp"
+                    android:autoSizeTextType="uniform"
+                    android:gravity="center" />
+                <AutoCompleteTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="40dp"
+                    android:paddingLeft = "10dp"
+                    android:background="#ffffff"
+                    android:hint="@{loginModel.inputEmailHint}"
+                    android:text="@={loginModel.inputEmail}"
+                    android:inputType="textEmailAddress"
+                    android:singleLine="true"
+                    android:nextFocusDown="@+id/ed_pw"/>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="5dp"
+                app:cardBackgroundColor="#ffffff">
+                <TextView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:text="PW"
+                    android:padding="5dp"
+                    android:autoSizeTextType="uniform"
+                    android:gravity="center" />
+                <EditText
+                    android:id="@+id/ed_pw"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="40dp"
+                    android:paddingLeft = "10dp"
+                    android:background="#ffffff"
+                    android:hint="@{loginModel.inputPasswordHint}"
+                    android:text="@={loginModel.inputPassword}"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:inputType="textPassword"
+                    />
+            </androidx.cardview.widget.CardView>
+            <CheckBox
+                android:id="@+id/cb_auto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity= "center"
+                android:text="@string/auto_login"
+                android:textSize="16dp"/>
+
+
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:layout_marginTop="16dp"
+                android:text="@{loginModel.btnLoginText}"
+                android:textStyle="bold"
+                android:textColor="#ffffff"
+                android:textSize="16dp"
+                android:onClick="@{() -> loginModel.click()}"/>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/find_password"
+                    android:textStyle="bold"
+                    android:textSize="16dp"
+                    android:onClick="@{() -> loginModel.onFindPwClick()}"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sign_up_under"
+                    android:layout_gravity="right"
+                    android:textStyle="bold"
+                    android:textSize="16dp"
+                    android:onClick="@{() -> loginModel.onSignInClick()}"/>
+            </FrameLayout>
+
+        </LinearLayout>
+    </FrameLayout>
+
+</layout>
+

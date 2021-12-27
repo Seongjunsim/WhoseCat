@@ -1,0 +1,17 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="calendar_categoty_header_txt_size">28dp</dimen>
+    <dimen name="calendar_category_header_padding_horizontal">20dp</dimen>
+    <dimen name="calendar_category_header_padding_vertical">5dp</dimen>
+    <dimen name="calendar_category_txt_size">14dp</dimen>
+    <dimen name="calendar_category_padding_horizontal">20dp</dimen>
+    <dimen name="calendar_category_padding_vertical">12dp</dimen>
+    <dimen name="home_view_txt_value_size">30dp</dimen>
+    <dimen name="home_view_left_margin">20dp</dimen>
+    <dimen name="analyis_spinner_text_size">20dp</dimen>
+    <dimen name="analyis_time_picker_item_width">80dp</dimen>
+    <dimen name="home_view_color_margin_right">5dp</dimen>
+    <dimen name="home_view_margin_top">10dp</dimen>
+    <dimen name="list_pet_device_margin">10dp</dimen>
+    <dimen name="home_water">17dp</dimen>
+</resources>
